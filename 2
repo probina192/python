@@ -1,0 +1,11 @@
+import os
+def print_files(path):
+    for file_name in os.listdir(path):
+        full_path = os.path.join(path, file_name)
+        if os.path.isdir(full_path):
+            print_files(full_path)
+        else:
+            if full_path.endswith('exe'):
+                print(full_path)
+path ="C:\Users\Мария\Downloads"
+print_files(path)
