@@ -1,0 +1,13 @@
+import os
+
+a = ["neutral","calm","happy","sad","angry","fearful","digust","surprised"]
+#for i in a:
+#   os.mkdir(i)
+path = "C:\Users\Мария\Downloads"
+source_dir = "C:\Users\Мария\Desktop\Audio_Speech_Actors_01-24"
+for dirpath, dirnames, filenames in os.walk(source_dir):
+    for dirname in dirnames:
+        b = os.listdir(source_dir+"/"+dirname)
+        for filename in b:
+            if filename.endswith('.wav'):
+                os.replace(source_dir+"/"+dirname+"/"+filename, path +a[int(filename[7])-1]+"/"+ filename)
